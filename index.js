@@ -72,7 +72,9 @@
                     console.log('error occured')
                 })
             }
-            plotMarker(latLon)
+            plotMarker(latLon);
+            addressField.value = target.innerText;
+            addressList.classList.add('hideClass');
         }
     }
 
@@ -124,6 +126,10 @@
                 li.innerText = `${currentProp.street}, ${currentProp.city}, ${currentProp.state}, ${currentProp.postalCode}`;
                 addressList.appendChild(li);
             }
+        }
+
+        if( addressList.classList.contains('hideClass')){
+            addressList.classList.remove('hideClass');
         }
     }
 
